@@ -1,7 +1,7 @@
 # WITS - What Is That Stuff
 A replication of WAILA for Minecraft: Bedrock Edition
 
-##For Addon Makers
+## For Addon Makers
 If you want your custom blocks to be displayed by this addon, you have to follow these steps:
 1. Add this snippet to your resource pack's manifest file:
 ```json
