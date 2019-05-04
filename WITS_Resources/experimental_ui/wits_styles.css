@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Minecraftia';
+    src: url(fonts/Minecraftia.ttf);
+}
+
+@font-face {
+    font-family: 'Minecraft Italic';
+    src: url(fonts/Minecraft-Italic.otf)
+}
+
+#block-image {
+    margin: 4px;
+}
+
+#block-name {
+    font-family: "Minecraftia";
+    color: black;
+    font-size: 18px;
+    margin: 0;
+}
+
+#block-info {
+    font-family: "Minecraftia";
+    color: black;
+    font-size: 13px;
+    margin: 0;
+}
+
+#block-namespace {
+    font-family: "Minecraft Italic";
+    color: darkblue;
+    font-size: 15px;
+    margin: 0;
+}
+
+#text {
+    flex-direction: column;
+    align-items: baseline;
+    align-content: space-around;
+    margin-right: 5px;
+}
+
+#indicator {
+    color: #4C4C4C;
+    border: 3px solid #8b8b8b;
+    background-color: #d4d4d4;
+    top: 25px;
+    padding-top: 15px;
+    padding: 0;
+	margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+}
+
+#screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

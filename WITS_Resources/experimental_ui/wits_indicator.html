@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <script src="UIEngine.js"></script>
+        <link rel="stylesheet" href="wits_styles.css" />
+    </head>
+
+    <body>
+        <div id="screen">
+            <div id="indicator">
+                <img id="block-image" src="blocks/stone.png">
+                <div id="text">
+                    <p id="block-name"></p>
+                    <p id="block-info"></p>
+                    <p id="block-namespace"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        let indicatorPanel = document.getElementById("indicator");
+        let blockName = document.getElementById("block-name");
+        let blockInfo = document.getElementById("block-info");
+        let blockImage = document.getElementById("block-image");
+        let blockNamespace = document.getElementById("block-namespace");
+
+        let scriptInterface = null;
+        engine.on("facet:updated:core.scripting", function (interface) {
+            scriptInterface = interface;
+        });
+
+        engine.trigger("facet:request", ["core.scripting"]);
+
+        engine.on("wits:block_update", function (eventData) {
+            let blockData = JSON.parse(eventData);
+            blockImage.src = "blocks/" + blockData.identifier + ".png"
+            indicatorPanel.style.opacity = 100;
+            blockName.innerHTML = capitalize(blockData.identifier.replace(/_/g, ' '));
+            blockInfo.innerHTML = blockData.info;
+            blockNamespace.innerHTML = blockData.namespace;
+        })
+
+        engine.on("wits:hide_ui", function (eventData) {
+            indicatorPanel.style.opacity = 0;
+        })
+
+        function capitalize(str) {
+            return str.toLowerCase()
+                .split(' ')
+                .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                .join(' ');
+        }
+    </script>
+
+</html>
