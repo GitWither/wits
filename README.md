@@ -1,5 +1,6 @@
 # WITS - What Is That Stuff
 A replication of WAILA for Minecraft: Bedrock Edition
+![WITS Screenshot](https://github.com/GitWither/wits/blob/master/art/header.png)
 
 ## For Addon Makers
 If you want your custom blocks to be displayed by this addon, you have to follow these steps:
