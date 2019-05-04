@@ -1,2 +1,1 @@
-# wits
-WITS - What Is That Stuff
+# WITS - What Is That Stuff
